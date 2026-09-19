@@ -1,0 +1,55 @@
+- accountValidator
+   |_main.java
+- service
+    |_classDefinition.java
+    |_methods.java (create, change, login)
+    |_hashing.java (hashing password)
+    |_fileInteraction.java
+    |_ruleChecks.java
+- policy
+    |_usernameRules.java
+    |_passwordRules.java
+- repository
+    |_userdata.csv
+- testing
+    |_testing.java
+
+
+password-validator/
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── de/
+│   │   │       └── stefa/
+│   │   │           └── passwordvalidator/
+│   │   │               ├── PasswordValidatorApp.java      // main() entry point
+│   │   │               ├── validator/
+│   │   │               │   ├── PasswordValidator.java     // Hauptlogik
+│   │   │               │   └── UsernameValidator.java     // Separate Verantwortung
+│   │   │               ├── policy/
+│   │   │               │   ├── PasswordPolicy.java        // Konfiguration
+│   │   │               │   └── ValidationRule.java        // Interface für Regeln
+│   │   │               ├── service/
+│   │   │               │   ├── HashingService.java        // bcrypt/SHA-256
+│   │   │               │   ├── UserStorage.java           // CRUD für userdata
+│   │   │               │   └── AuthenticationService.java  // login(), changePassword()
+│   │   │               ├── model/
+│   │   │               │   └── User.java                  // Datenmodell
+│   │   │               └── util/
+│   │   │                   └── FileReader.java            // CSV-Parsing
+│   │   └── resources/
+│   │       └── userdata.csv                              // Default-Daten
+│   └── test/
+│       └── java/
+│           └── de/
+│               └── stefa/
+│                   └── passwordvalidator/
+│                       ├── validator/
+│                       │   ├── PasswordValidatorTest.java
+│                       │   └── UsernameValidatorTest.java
+│                       ├── policy/
+│                       │   └── PasswordPolicyTest.java
+│                       └── service/
+│                           ├── HashingServiceTest.java
+│                           └── AuthenticationServiceTest.java
+└── pom.xml                                            // Maven-Konfiguration
