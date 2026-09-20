@@ -78,11 +78,19 @@ public class UserDataManagement {
         }
     }
 
+    public static String inputEmail() {
+        while (true) {
+            String emailInput = stringScanner("Please enter email: ");
+
+            return emailInput;
+        }
+
+    }
 
     public static User CreateUserAccount() {
         String username = inputUsername();
         String password = inputPassword();
-        String email = "";
+        String email = inputEmail();
         String phone = "";
 
         return new User(
