@@ -1,5 +1,6 @@
 package de.accountvalidator.service;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class UserDataManagement {
@@ -78,20 +79,36 @@ public class UserDataManagement {
         }
     }
 
+
     public static String inputEmail() {
         while (true) {
             String emailInput = stringScanner("Please enter email: ");
 
             return emailInput;
         }
+    }
 
+
+    public static void writeUserdataToFile() {
+        User testuser = CreateUserAccount();
+        System.out.printf("Username: %s, Password: %s, email: %s, phone: %s",
+                testuser.username, testuser.password, testuser.email, testuser.phone);
+    }
+
+
+    public static String inputPhoneNumber() {
+        while (true) {
+            String phoneInput = stringScanner("Please enter phone number: ");
+
+            return phoneInput;
+        }
     }
 
     public static User CreateUserAccount() {
         String username = inputUsername();
         String password = inputPassword();
         String email = inputEmail();
-        String phone = "";
+        String phone = inputPhoneNumber();
 
         return new User(
                 username,
@@ -102,7 +119,6 @@ public class UserDataManagement {
     }
 
     public static void main(String[] args) {
-        User testuser = CreateUserAccount();
-        System.out.println(testuser);
+        writeUserdataToFile();
     }
 }

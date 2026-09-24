@@ -1,5 +1,7 @@
 package de.accountvalidator.policy;
 
+// safed passwords hashed with salt
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
